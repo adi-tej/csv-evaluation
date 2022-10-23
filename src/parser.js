@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import Papa from 'papaparse';
 import { getIndexFromChar } from "./helper.js";
 
-/* read CSV file - default separator ',' */
-export const readCSV = async (filePath, sep=',') => {
+/* read file - default separator ',' */
+export const readFile = async (filePath, sep=',') => {
     const file = fs.readFileSync(filePath)
     const data = file.toString()
     return new Promise(resolve => {

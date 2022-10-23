@@ -1,12 +1,8 @@
-import { parseExpression, readCSV, writeToCSV } from "./parser.js";
+import { parseExpression, readFile, writeToCSV } from "./parser.js";
 
-let csvFilePath = 'src/input.csv';
-await process.stdin.on('data', data => {
-    csvFilePath = data.toString()
-    console.log(`You typed ${data.toString()}`);
-    process.exit();
-});
-readCSV(csvFilePath).then(data => {
+let filePath = 'src/input.csv';
+
+readFile(filePath).then(data => {
     const values = data[0];
     for (const [i, row] of data.entries()) {
         if (i > 0) {
