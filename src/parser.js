@@ -45,7 +45,8 @@ export const parseExpression = (exp, values) => {
                 value = parseExpression(subExpression, values);
                 i = closeIndex;
             }else if(char !== ' ') {
-                value = parseInt(values[getIndexFromChar(char)]);
+                const index = getIndexFromChar(char);
+                value = parseInt(values[index]);
             }
             if (solution === null) {
                 solution = value;
